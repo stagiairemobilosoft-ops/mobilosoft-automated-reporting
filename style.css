@@ -19,7 +19,7 @@ body {
     justify-content: space-between;
     padding: 0 30px;
     margin-left: 50px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .flux {
@@ -184,4 +184,11 @@ body {
 
 .hidden {
     display: none;
+}
+
+#siege {
+    background-color: #007ffe;
+}
+.cont-sg-rapport{
+    background-color: #F8F9FA;
 }
