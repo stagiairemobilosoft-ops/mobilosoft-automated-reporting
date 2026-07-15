@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>My mobilosoft Settings</title>
 </head>
 <body>
@@ -56,7 +60,28 @@
             </div>
         </div>
 
-    <!-- Menu Sièges & établissements -->
+        <!-- Menu Sièges & établissements -->
+        <div class="report-menu">
+
+            <div class="menu-item active" onclick="showTab('siege', this)">
+                Siège
+            </div>
+        
+            <div class="menu-item" onclick="showTab('etablissement', this)">
+                Établissement
+            </div>
+        
+        </div>
+        
+        
+        <div id="siege" class="tab-content">
+            <p>Contenu du reporting réseau</p>
+        </div>
+        
+        
+        <div id="etablissement" class="tab-content hidden">
+            <p>Contenu de l'établissement</p>
+        </div>
 
     <!-- Bouton ajout -->
 
