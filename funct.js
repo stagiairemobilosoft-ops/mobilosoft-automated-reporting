@@ -38,18 +38,25 @@ function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function toggleReporting() {
+function toggleReporting(type) {
 
-    const list = document.getElementById("reportList");
-    const arrow = document.getElementById("reportArrow");
+    const list = document.getElementById("reportList" + type);
+    const arrow = document.getElementById("reportArrow" + type);
 
     list.classList.toggle("hidden");
 
+
     if (list.classList.contains("hidden")) {
+
         arrow.classList.remove("fa-chevron-up");
         arrow.classList.add("fa-chevron-down");
+
     } else {
+
         arrow.classList.remove("fa-chevron-down");
         arrow.classList.add("fa-chevron-up");
+
     }
 }
+
+

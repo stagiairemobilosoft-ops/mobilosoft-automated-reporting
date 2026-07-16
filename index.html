@@ -137,28 +137,6 @@
                             </div>
                     
                         </div>
-
-                        <!-- Rapport 3 -->
-                        <div class="rapport-reporting">
-                    
-                            <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
-                    
-                            <div class="rapport-content">
-                    
-                                <h4>Trimestriel - Siège</h4>
-                    
-                                <p class="next-run">
-                                    Prochaine exécution : <strong>20/07/26</strong> à <strong>07:00</strong>
-                                </p>
-                    
-                                <div class="rapport-info">
-                                    <p>Destinataires : <strong>3</strong></p>
-                                    <p>Dernière exécution : <strong>01/07/26</strong></p>
-                                </div>
-                    
-                            </div>
-                    
-                        </div>
                     
                     </div>
             
@@ -178,17 +156,17 @@
                             <div class="config-body">
                     
                                 <label>Nom du reporting</label>
-                                <input type="text" placeholder="Email Hebdomadaire-Siège">
+                                <input type="text" placeholder="Email Hebdomadaire-Siège" value="Trimestriel- Siège">
                     
                                 <label>Format</label>
                                 <div class="format-choice">
                                     <label>
-                                        <input type="radio" name="email" value="email" checked>
+                                        <input type="radio" name="email" value="email" >
                                         Email
                                     </label>
                     
                                     <label>
-                                        <input type="radio" name="pdf" value="pdf" checked>
+                                        <input type="radio" name="pdf" value="pdf" >
                                         PDF
                                     </label>
                                 </div>
@@ -230,7 +208,7 @@
                                 <label>Destinataire</label>
                                 <div class="email-container">
                                     <div id="emailTags"></div>
-                                    <input type="email" id="emailInput" placeholder="Email Siège">
+                                    <input type="email" id="emailInput" placeholder="Email Siège" value="hq@siege.com">
                                 </div>
                     
                             </div>
@@ -239,40 +217,117 @@
                         <h5>Configuration rapport Email</h5>
                         <div class="config-card">
 
-                            <div class="config-header-report" onclick="toggleReporting()">
-                                <span>Type de reporting</span>
-                                <i id="reportArrow" class="fa-solid fa-chevron-down"></i>
+                            <!-- Type de reportings -->
+                            <div id="reportTypesEmail">
+                        
+                                <div class="config-header-report" onclick="toggleReporting('Email')">
+                                    <span>Type de reporting</span>
+                                    <i id="reportArrowEmail" class="fa-solid fa-chevron-down"></i>
+                                </div>
+
+                                <div id="reportListEmail" class="report-list hidden">
+                                    <div class="report-item" onclick="openReport('visibility')">
+                                        <span>Visibilité</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                            
+                                    <div class="report-item" onclick="openReport('campaign')">
+                                        <span>Campagnes</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                            
+                                    <div class="report-item" onclick="openReport('reviews')">
+                                        <span>Avis</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                            
+                                    <div class="report-item" onclick="openReport('ai')">
+                                        <span>Advanced Insights</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                </div>
                             </div>
                         
-                            <div id="reportList" class="report-list hidden">
+                            <!-- Détails KPIs -->
+                            <div id="reportKpis" class="hidden">
                         
-                                <div class="report-item">
-                                    <span>Visibilité</span>
-                                    <i class="fa-solid fa-angle-right"></i>
+                                <div class="config-header-report">
+                                    <span onclick="backToReports()" style="cursor:pointer;">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Retour
+                                    </span>
+                                    <button class="validate-btn" onclick="validateKpis()">
+                                        Enregistrer
+                                    </button>
                                 </div>
                         
-                                <div class="report-item">
-                                    <span>Campagnes</span>
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </div>
+                                <h4 id="reportTitle"></h4>
                         
-                                <div class="report-item">
-                                    <span>Avis</span>
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </div>
-                        
-                                <div class="report-item">
-                                    <span>Advanced Insights</span>
-                                    <i class="fa-solid fa-angle-right"></i>
+                                <div id="kpiContainer">
                                 </div>
                         
                             </div>
                         
                         </div>
 
-                     
+                        <h5>Configuration rapport PDF</h5>
+                        <div class="config-card">
+
+                            <!-- Type de reportings -->
+                            <div id="reportTypesPdf">
+                        
+                                <div class="config-header-report" onclick="toggleReporting('Pdf')">
+                                    <span>Type de reporting</span>
+                                    <i id="reportArrowPdf" class="fa-solid fa-chevron-down"></i>
+                                </div>
+
+                                <div id="reportListPdf" class="report-list hidden">
+                                    <div class="report-item" onclick="openReport('visibility')">
+                                        <span>Visibilité</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                            
+                                    <div class="report-item" onclick="openReport('campaign')">
+                                        <span>Campagnes</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                            
+                                    <div class="report-item" onclick="openReport('reviews')">
+                                        <span>Avis</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                            
+                                    <div class="report-item" onclick="openReport('ai')">
+                                        <span>Advanced Insights</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Détails KPIs -->
+                            <div id="reportKpis" class="hidden">
+                        
+                                <div class="config-header-report">
+                                    <span onclick="backToReports()" style="cursor:pointer;">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Retour
+                                    </span>
+                                    <button class="validate-btn" onclick="validateKpis()">
+                                        Enregistrer
+                                    </button>
+                                </div>
+                        
+                                <h4 id="reportTitle"></h4>
+                        
+                                <div id="kpiContainer">
+                                </div>
+                        
+                            </div>
+                        
+                        </div>
                     
                     </div>
+                    
             
                 </div>
             
@@ -289,5 +344,7 @@
 <!-- Corps  -->
 
 <script src="funct.js"></script>
+
+<script src="reporting.js"></script>
 </body>
 </html>
