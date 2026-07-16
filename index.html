@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="siege.css">
     <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>My mobilosoft Settings</title>
 </head>
@@ -73,26 +75,194 @@
         
         </div>
         
+        <!-- Contenu siège  -->
 
-    <!-- Contenu siège  -->
+            <!-- Bouton ajout -->
 
-        <!-- Bouton ajout -->
+            <div id="siege" class="tab-content">
 
-        <div id="siege" class="tab-content">
-            <div class="cont-sg-rapport">
-                <p>Contenu du reporting réseau</p>
+                <!-- En-tête -->
+                <div class="report-header">
+                    <button class="btn-add-report">
+                        + Nouveau rapport
+                    </button>
+                </div>
+            
+                <!-- Contenu -->
+                <div class="report-container">
+            
+                    <div class="left-panel">
+
+                        <!-- Rapport 1 -->
+                        <div class="rapport-reporting">
+                    
+                            <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
+                    
+                            <div class="rapport-content">
+                    
+                                <h4>Hebdomadaire - Siège</h4>
+                    
+                                <p class="next-run">
+                                    Prochaine exécution : <strong>20/07/26</strong> à <strong>07:00</strong>
+                                </p>
+                    
+                                <div class="rapport-info">
+                                    <p>Destinataires : <strong>2</strong></p>
+                                    <p>Dernière exécution : <strong>13/07/26</strong></p>
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+                    
+                    
+                        <!-- Rapport 2 -->
+                        <div class="rapport-reporting">
+                    
+                            <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
+                    
+                            <div class="rapport-content">
+                    
+                                <h4>Mensuel - Siège</h4>
+                    
+                                <p class="next-run">
+                                    Prochaine exécution : <strong>20/07/26</strong> à <strong>07:00</strong>
+                                </p>
+                    
+                                <div class="rapport-info">
+                                    <p>Destinataires : <strong>3</strong></p>
+                                    <p>Dernière exécution : <strong>01/07/26</strong></p>
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+
+                        <!-- Rapport 3 -->
+                        <div class="rapport-reporting">
+                    
+                            <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
+                    
+                            <div class="rapport-content">
+                    
+                                <h4>Trimestriel - Siège</h4>
+                    
+                                <p class="next-run">
+                                    Prochaine exécution : <strong>20/07/26</strong> à <strong>07:00</strong>
+                                </p>
+                    
+                                <div class="rapport-info">
+                                    <p>Destinataires : <strong>3</strong></p>
+                                    <p>Dernière exécution : <strong>01/07/26</strong></p>
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+                    
+                    </div>
+            
+                    <div class="right-panel">
+
+                        <h3>Configuration du reporting</h3>
+                        <hr>
+                    
+                        <h5>Configuration envoie</h5>
+                        <div class="config-card">
+                    
+                            <div class="config-header">
+                                Informations générales
+                            </div>
+                    
+                    
+                            <div class="config-body">
+                    
+                                <label>Nom du reporting</label>
+                                <input type="text" placeholder="Email Hebdomadaire-Siège">
+                    
+                                <label>Format</label>
+                                <div class="format-choice">
+                                    <label>
+                                        <input type="radio" name="email" value="email" checked>
+                                        Email
+                                    </label>
+                    
+                                    <label>
+                                        <input type="radio" name="pdf" value="pdf" checked>
+                                        PDF
+                                    </label>
+                                </div>
+                    
+                    
+                                <label for="frequence">Fréquence</label>
+                                <select id="frequence" name="frequence">
+                                    <option value="hebdomadaire">Hebdomadaire</option>
+                                    <option value="mensuelle" selected>Mensuelle</option>
+                                    <option value="trimestrielle">Trimestrielle</option>
+                                </select>
+                    
+                    
+                                <div class="schedule-row">
+                                    <div class="field">
+                                        <label for="jour">Jour</label>
+                                        <div class="input-small">
+                                            <select id="jour" name="jour">
+                                                <option value="lundi" selected>Lundi</option>
+                                                <option value="mardi">Mardi</option>
+                                                <option value="mercredi">Mercredi</option>
+                                                <option value="jeudi">Jeudi</option>
+                                                <option value="vendredi">Vendredi</option>
+                                                <option value="samedi">Samedi</option>
+                                                <option value="dimanche">Dimanche</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="field">
+                                        <label for="heure">Heure</label>
+                                        <div class="input-small">
+                                            <input type="time" id="heure" name="heure" value="09:00">
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                    
+                                <label>Destinataire</label>
+                                <div class="email-container">
+                                    <div id="emailTags"></div>
+                                    <input type="email" id="emailInput" placeholder="Email Siège">
+                                </div>
+                    
+                            </div>
+                        </div>
+
+                        <h5>Configuration rapport Email</h5>
+                        <div class="config-card">
+                            <div class="config-header-report" onclick="openDrawer()">
+                                Type de reporting
+                            </div>
+                        </div>
+                        
+                    
+
+                        
+                    
+                    </div>
+            
+                </div>
+            
             </div>
-        </div>
-        
-        
+            
+            
+        <!-- Contenu établoissement  -->
+
         <div id="etablissement" class="tab-content hidden">
             <p>Contenu du reporting de l'établissement</p>
         </div>
 
-     <!-- Contenu siège  -->
-
     </div>  
 <!-- Corps  -->
-    
+
+<script src="funct.js"></script>
 </body>
 </html>

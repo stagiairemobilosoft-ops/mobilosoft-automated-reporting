@@ -9,7 +9,6 @@ body {
     background-color: #F2F2F5;
 }
 
-
 .navbar {
     height: 40px;
     width: 97%;
@@ -93,7 +92,7 @@ body {
 }
 
 .sidebar-menu img {
-    width: 20px;
+    width: 25px;
 }
 
 
@@ -146,7 +145,7 @@ body {
 
 .report-menu {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
     gap: 30px;
 }
 
@@ -156,11 +155,13 @@ body {
     padding: 15px 20px;
     cursor: pointer;
     color: #6B7280;
+    font-size: 16px;
 }
 
 
 .menu-item.active {
     color: #065CFF;
+    font-size: 16px;
 }
 
 
@@ -178,17 +179,10 @@ body {
 
 
 .tab-content {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
 .hidden {
     display: none;
-}
-
-#siege {
-    background-color: #007ffe;
-}
-.cont-sg-rapport{
-    background-color: #F8F9FA;
 }
