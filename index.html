@@ -226,22 +226,22 @@
                                 </div>
 
                                 <div id="reportListEmail" class="report-list hidden">
-                                    <div class="report-item" onclick="openReport('visibility')">
+                                    <div class="report-item" onclick="openReport('visibility','Email')">
                                         <span>Visibilité</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
                             
-                                    <div class="report-item" onclick="openReport('campaign')">
+                                    <div class="report-item" onclick="openReport('campaign','Email')">
                                         <span>Campagnes</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
                             
-                                    <div class="report-item" onclick="openReport('reviews')">
+                                    <div class="report-item" onclick="openReport('reviews','Email')">
                                         <span>Avis</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
                             
-                                    <div class="report-item" onclick="openReport('ai')">
+                                    <div class="report-item" onclick="openReport('ai','Email')">
                                         <span>Advanced Insights</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
@@ -249,10 +249,10 @@
                             </div>
                         
                             <!-- Détails KPIs -->
-                            <div id="reportKpis" class="hidden">
+                            <div id="reportKpisEmail" class="hidden">
                         
                                 <div class="config-header-report">
-                                    <span onclick="backToReports()" style="cursor:pointer;">
+                                    <span onclick="backToReports('Email')" style="cursor:pointer;">
                                         <i class="fa-solid fa-arrow-left"></i>
                                         Retour
                                     </span>
@@ -261,9 +261,9 @@
                                     </button>
                                 </div>
                         
-                                <h4 id="reportTitle"></h4>
+                                <h4 id="reportTitleEmail"></h4>
                         
-                                <div id="kpiContainer">
+                                <div id="kpiContainerEmail">
                                 </div>
                         
                             </div>
@@ -282,22 +282,22 @@
                                 </div>
 
                                 <div id="reportListPdf" class="report-list hidden">
-                                    <div class="report-item" onclick="openReport('visibility')">
+                                    <div class="report-item" onclick="openReport('visibility', 'Pdf')">
                                         <span>Visibilité</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
                             
-                                    <div class="report-item" onclick="openReport('campaign')">
+                                    <div class="report-item" onclick="openReport('campaign', 'Pdf')">
                                         <span>Campagnes</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
                             
-                                    <div class="report-item" onclick="openReport('reviews')">
+                                    <div class="report-item" onclick="openReport('reviews', 'Pdf')">
                                         <span>Avis</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
                             
-                                    <div class="report-item" onclick="openReport('ai')">
+                                    <div class="report-item" onclick="openReport('ai', 'Pdf')">
                                         <span>Advanced Insights</span>
                                         <i class="fa-solid fa-angle-right"></i>
                                     </div>
@@ -305,10 +305,10 @@
                             </div>
                         
                             <!-- Détails KPIs -->
-                            <div id="reportKpis" class="hidden">
+                            <div id="reportKpisPdf" class="hidden">
                         
                                 <div class="config-header-report">
-                                    <span onclick="backToReports()" style="cursor:pointer;">
+                                    <span onclick="backToReports('Pdf')" style="cursor:pointer;">
                                         <i class="fa-solid fa-arrow-left"></i>
                                         Retour
                                     </span>
@@ -317,9 +317,9 @@
                                     </button>
                                 </div>
                         
-                                <h4 id="reportTitle"></h4>
+                                <h4 id="reportTitlePdf"></h4>
                         
-                                <div id="kpiContainer">
+                                <div id="kpiContainerPdf">
                                 </div>
                         
                             </div>
