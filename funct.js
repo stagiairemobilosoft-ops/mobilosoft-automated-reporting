@@ -37,3 +37,19 @@ function addEmailTag(email) {
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
+
+function toggleReporting() {
+
+    const list = document.getElementById("reportList");
+    const arrow = document.getElementById("reportArrow");
+
+    list.classList.toggle("hidden");
+
+    if (list.classList.contains("hidden")) {
+        arrow.classList.remove("fa-chevron-up");
+        arrow.classList.add("fa-chevron-down");
+    } else {
+        arrow.classList.remove("fa-chevron-down");
+        arrow.classList.add("fa-chevron-up");
+    }
+}

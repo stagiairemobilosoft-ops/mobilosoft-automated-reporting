@@ -238,14 +238,39 @@
 
                         <h5>Configuration rapport Email</h5>
                         <div class="config-card">
-                            <div class="config-header-report" onclick="openDrawer()">
-                                Type de reporting
-                            </div>
-                        </div>
-                        
-                    
 
+                            <div class="config-header-report" onclick="toggleReporting()">
+                                <span>Type de reporting</span>
+                                <i id="reportArrow" class="fa-solid fa-chevron-down"></i>
+                            </div>
                         
+                            <div id="reportList" class="report-list hidden">
+                        
+                                <div class="report-item">
+                                    <span>Visibilité</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                        
+                                <div class="report-item">
+                                    <span>Campagnes</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                        
+                                <div class="report-item">
+                                    <span>Avis</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                        
+                                <div class="report-item">
+                                    <span>Advanced Insights</span>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                        
+                            </div>
+                        
+                        </div>
+
+                     
                     
                     </div>
             
