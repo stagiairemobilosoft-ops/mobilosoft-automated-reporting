@@ -16,6 +16,7 @@ emailInput.addEventListener("keydown", function(event) {
     }
 });
 
+// ajouter email dans input
 
 function addEmailTag(email) {
 
@@ -34,6 +35,7 @@ function addEmailTag(email) {
     emailTags.appendChild(tag);
 }
 
+//ouvrir le reporting * pour choix des kpis
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -60,3 +62,26 @@ function toggleReporting(type) {
 }
 
 
+// activer les autres configs si automatique
+
+const modeRadios = document.querySelectorAll('input[name="modeEnvoie"]');
+const scheduleConfig = document.getElementById("scheduleConfig");
+
+
+modeRadios.forEach(radio => {
+
+    radio.addEventListener("change", function() {
+
+        if (this.value === "automatique") {
+
+            scheduleConfig.classList.remove("hidden");
+
+        } else {
+
+            scheduleConfig.classList.add("hidden");
+
+        }
+
+    });
+
+});

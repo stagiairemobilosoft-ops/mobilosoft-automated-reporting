@@ -11,8 +11,8 @@
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px 18px;
-    font-family: 'Urbanist', sans-serif;
+    padding: 7px 18px;
+    font-family: 'Arial', sans-serif;
     font-size: 12px;
     font-weight: 500;
     cursor: pointer;
@@ -155,18 +155,18 @@
     border-radius: 10px;
     padding: 0 20px;
     margin-bottom: 25px;
-    font-family: 'Urbanist';
+    font-family: 'Arial';
 }
 
-/* Format */
+/* Mode d'envoie */
 
-.format-choice {
+.mode-choice {
     display: flex;
     gap: 60px;
     margin-bottom: 25px;
 }
 
-.format-choice label {
+.mode-choice label {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -181,7 +181,7 @@ select {
     margin-bottom: 25px;
     border-radius: 8px;
     background: white;
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-size: 12px;
 }
 
@@ -226,7 +226,7 @@ select {
     border: none;
     outline: none;
     flex: 1;
-    font-family: 'Urbanist';
+    font-family: 'Arial';
     min-width: 150px;
 }
 
@@ -244,7 +244,7 @@ select {
     padding: 6px 10px;
     border-radius: 15px;
     font-size: 12px;
-    font-family: 'Urbanist';
+    font-family: 'Arial';
 }
 
 .email-tag span {

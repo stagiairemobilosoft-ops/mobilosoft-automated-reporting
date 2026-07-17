@@ -16,3 +16,4 @@ function showTab(tabId, element) {
 
     element.classList.add("active");
 }
+
