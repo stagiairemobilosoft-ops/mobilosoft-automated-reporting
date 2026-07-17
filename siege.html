@@ -1,7 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="siege.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>My mobilosoft Settings</title>
+</head>
+<body>
+
+<!-- Nav Bar  -->
+    <nav class="navbar">
+        <div class="flux">
+            Site &gt; <strong>mobilosoft-prod</strong> &gt; Paramètres
+        </div>
+
+        <div class="user">
+            <span>Stagiaire mobilosoft</span>
+        </div>
+    </nav>
+
+<!-- Side Bar -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+            <img src="img/logo-new.svg" alt="Logo" class="logo">
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li> <a href="#"><img src="img/icones/png/Visibilité_locale.png" alt="visibilite locale" class="ic_menu"></a></li>
+            <li> <a href="#"><img src="img/icones/png/Publicités_locales.png" alt="visibilite locale" class="ic_menu"> </a></li>
+            <li> <a href="#"><img src="img/icones/png/E-reputation.png" alt="visibilite locale" class="ic_menu"> </a></li>
+            <li> <a href="#"><img src="img/icones/png/Reporting.png" alt="visibilite locale" class="ic_menu"> </a></li>
+            <li> <a href="#"><img src="img/icones/png/IA.png" alt="visibilite locale" class="ic_menu"> </a></li>
+            <li> <a href="#" class="active"><img src="img/icones/png/Réglages.png" alt="visibilite locale" class="ic_menu"> </a></li>
+            <li> <a href="#"><img src="img/icones/png/Compte.png" alt="visibilite locale" class="ic_menu"> </a></li>
+
+        </ul>
+
+    </div>
+
+<!-- Corps  -->
+    <div class="body-content">
+
+        <!-- Paramètres -->
+        <div class="menu-title">
+            <h2>Paramètres</h2>
+        </div>  
+
+        <!-- Grid Paramètres -->
+        <div class="content">
+            <div class="cont-params">
+                <p>Configuration rapport</p> 
+            </div>
+        </div>
+
+        <!-- Menu Sièges & établissements -->
+        <div class="report-menu">
+
+            <div class="menu-item active" onclick="showTab('siege', this)">
+                Siège
+            </div>
+        
+            <div class="menu-item" onclick="showTab('etablissement', this)">
+                Établissement
+            </div>
+        
+        </div>
+        
         <!-- Contenu siège  -->
 
             <!-- Bouton ajout -->
 
+            <div id="siege" class="tab-content">
 
                 <!-- En-tête -->
                 <div class="report-header">
@@ -80,11 +158,11 @@
                                 <label>Nom du reporting</label>
                                 <input type="text" placeholder="Email Hebdomadaire-Siège" value="Trimestriel- Siège">
                     
-                                <label>Mode d'envoi</label>
+                                <label>Mode d'envoie</label>
                                 <div class="mode-choice">
                                     <label>
                                         <input type="radio" name="modeEnvoie" value="automatique" checked>
-                                        Automatique
+                                        automatique
                                     </label>
                     
                                     <label>
@@ -179,7 +257,7 @@
                                         <i class="fa-solid fa-arrow-left"></i>
                                         Retour
                                     </span>
-                                    <button class="validate-btn">
+                                    <button class="validate-btn" onclick="validateKpis()">
                                         Enregistrer
                                     </button>
                                 </div>
@@ -235,7 +313,7 @@
                                         <i class="fa-solid fa-arrow-left"></i>
                                         Retour
                                     </span>
-                                    <button class="validate-btn">
+                                    <button class="validate-btn" onclick="validateKpis()">
                                         Enregistrer
                                     </button>
                                 </div>
@@ -254,5 +332,20 @@
             
                 </div>
             
+            </div>
             
             
+        <!-- Contenu établoissement  -->
+
+        <div id="etablissement" class="tab-content hidden">
+            <p>Contenu du reporting de l'établissement</p>
+        </div>
+
+    </div>  
+<!-- Corps  -->
+
+<script src="funct.js"></script>
+
+<script src="reporting.js"></script>
+</body>
+</html>
