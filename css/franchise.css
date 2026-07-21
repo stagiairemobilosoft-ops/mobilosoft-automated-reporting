@@ -1,0 +1,250 @@
+/* content */
+.etablissement-container {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.one-panel,
+.two-panel,
+.three-panel {
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.one-panel {
+    width: 20%;
+}
+
+.two-panel {
+    width: 28%;
+}
+
+.three-panel {
+    width: 47%;
+}
+
+.one-panel h3,
+.two-panel h3,
+.three-panel h3 {
+    border-bottom: 1px solid #E5E5E5; 
+    color: #065CFF;
+    padding-left: 20px;
+    padding-bottom: 15px;           
+    margin-bottom: 20px;            
+    width: 100%;                    
+    box-sizing: border-box; 
+    margin-top: 20px;   
+
+}
+/* One-panel */
+.content-one{
+    width: 90%;
+    margin-left: 20px;
+}
+/* Recherche */
+.search-box {
+    height:35px;
+    border:1px solid #E5E5E5;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    padding:0 10px;
+}
+
+.search-box input {
+    border:none;
+    outline:none;
+    width:100%;
+}
+
+/* Liste établissement */
+.select-item {
+    background:#F8F9FA;
+    margin-top: 10px;
+    border-radius:8px;
+    height:40px;
+    margin-top:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 12px;
+    font-size:12px;
+}
+
+/*  two-panel */
+/* btn add rapport */
+.content-two{
+    width: 90%;
+    margin-left: 20px;
+}
+
+.new-report-btn {
+    background:#065CFF;
+    color:white;
+    border:none;
+    border-radius:15px;
+    padding:6px 14px;
+    font-size:12px;
+}
+
+.report-card {
+    margin-top:18px;
+    border:1px solid #E5E5E5;
+    border-radius:8px;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border: 1px solid #065CFF;
+}
+
+.report-card:hover {
+    border: 1px solid #065CFF;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.report-card h4 {
+    color: #022D7E;
+}
+
+.report-card p {
+    font-size:12px;
+    color:#6B7280;
+    padding-top: 5px;
+}
+
+.status {
+    margin-left:auto;
+    background:#DFF7E8;
+    color:#47D2A7;
+    border-radius:12px;
+    padding:3px 8px;
+    font-size:12px;
+}
+
+/* three-panel */
+.three-panel h5 {
+    margin: 20px 0 20px;
+    padding-left: 20px;
+}
+
+/* Grid reporting */
+.reporting-config-grid {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:20px 18px;
+    margin-top:0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.reporting-card {
+    position:relative;
+    height:130px;
+    border:1px solid #E5E5E5;
+    border-radius:8px;
+    padding:16px;
+    background:#FFFFFF;
+}
+
+.reporting-icon {
+    color:#022D7E;
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.reporting-card h4 {
+    position:absolute;
+    top:18px;
+    left:50px;
+    margin:0;
+    font-size:14px;
+    font-weight:600;
+    color:#3A3A3C;
+}
+
+.reporting-card p {
+    font-size:12px;
+    color:#8F90A6;
+    margin-top:8px;
+    line-height:15px;
+}
+
+.reporting-card button {
+    position:absolute;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:95px;
+    height:28px;
+    background:white;
+    color:#065CFF;
+    border:1px solid #065CFF;
+    border-radius:7px;
+    font-size:11px;
+}
+
+/* Modal */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal-content{
+    background:white;
+    width:500px;
+    border-radius:15px;
+    padding:25px;
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.close{
+    font-size:25px;
+    cursor:pointer;
+}
+
+.report-type{
+    display:flex;
+    gap:30px;
+    margin:20px 0;
+}
+
+.kpi-items{
+    display:flex;
+    gap:12px;
+    padding:12px;
+    margin-top: 10px;
+    background:#F2F2F5;
+    border-radius:8px;
+    margin-bottom:8px;
+    font-size: 12px;
+}
+
+.modal-footer{
+    text-align:right;
+    margin-top:20px;
+}
+
+.modal-footer button{
+    background:#065CFF;
+    color:white;
+    border:none;
+    padding:10px 25px;
+    border-radius:8px;
+}
