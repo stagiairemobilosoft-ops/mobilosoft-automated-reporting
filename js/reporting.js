@@ -1,40 +1,46 @@
 const reportDataEmail = {
     visibility: {
-        title: "Visibilité",
-        kpis: ["Nombre de vues","Recherches Google","Interactions","Appels","Itinéraires","Clics vers le site","Photos vues"]
+        title: "Reporting VISIBILITE",
+        kpis: ["Indice de visibilité","Evolution de l’indice de visibilité","Nombre total de visiteurs","Taux de complétude des fiche"
+        ]
     },
     campaign: {
-        title: "Campagnes",
-        kpis: ["Nombre de campagnes","Portée","Engagement","Publications"]
+        title: "Reporting CAMPAGNES",
+        kpis: ["Nombre total de publications","Portée totale des campagnes","Évolution de la Portée totale des campagnes","Nombre total d'interactions"
+        ]
     },
     reviews: {
-        title: "Avis",
-        kpis: ["Nombre d'avis","Note moyenne","Réponses","Temps de réponse"]
+        title: "Reporting AVIS (réputation)",
+        kpis: ["Nombre total d'avis","Évolution du volume d'avis","Note moyenne","Évolution de la note moyenne","TOP 3 Meilleure note du réseau","FLOP 3 Établissements à surveiller"
+        ]
     },
     ai: {
-        title: "Advanced Insights",
-        kpis: ["Sentiment global","Thèmes","Recommandations IA"]
+        title: "ADVANCED INSIGHTS",
+        kpis: ["Sentiment global","Évolution des sentiments","Nombre total de ressentis","Évolution des ressentis","Top 5 ressentis positifs","Flop 5 ressentis négatifs"
+        ]
     }
 };
 
-
-
 const reportDataPdf = {
     visibility: {
-        title: "Visibilité",
-        kpis: ["Nombre de vues","Recherches Google","Interactions","Évolution visibilité","Top établissements"]
+        title: "Reporting VISIBILITE",
+        kpis: ["Nombre total de visiteurs","Nombre de vues de la fiche Google Business Profile","Indice de visibilité","Evolution de l’indice de visibilité","Nombre d'activations google (itinéraires, appels, site web)","Top 5 établissements les plus visibles","Flop 5 établissements avec moins de visibilité","Contribution de chaque établissement à la visibilité du réseau(top/flop)"
+        ]
     },
     campaign: {
-        title: "Campagnes",
-        kpis: ["Campagnes actives","Portée totale","Taux d'engagement","Meilleure campagne","Performance par établissement"]
+        title: "Reporting CAMPAGNES",
+        kpis: ["Nombre de campagnes publiées","Nombre de campagnes actives","Nombre de campagnes programmées","Nombre de campagnes terminées","Portée totale des campagnes","Évolution de la Portée totale des campagnes","Nombre total d'interactions","Évolution des intéractions","Meilleure campagne sur la période","Top 5 campagnes","Contribution de chaque établissement aux campagnes du réseau"
+        ]
     },
     reviews: {
-        title: "Avis",
-        kpis: ["Volume d'avis","Note moyenne","Sentiment global","Taux de réponse","Avis négatifs"]
+        title: "Reporting AVIS (réputation)",
+        kpis: ["Nombre total d'avis","Évolution du volume d'avis","Note moyenne","Évolution de la note moyenne","NPS","Évolution du NPS","TOP 3 des établissements à meilleure note du réseau","FLOP 3 Établissements à surveiller","Nombre d'établissements sous 3★"
+        ]
     },
     ai: {
-        title: "Advanced Insights",
-        kpis: ["Analyse sentiment","Tendances détectées","Points forts","Points faibles","Recommandations IA"]
+        title: "ADVANCED INSIGHTS",
+        kpis: ["Sentiment global","Taux de sentiments positifs","Taux de sentiments neutres","Taux de sentiments négatifs","Évolution des sentiments","Sentiments par source","Top ressentis positifs","Top ressentis négatifs","Nombre total de ressentis","Évolution des ressentis"
+        ]
     }
 };
 
