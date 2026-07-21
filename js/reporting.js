@@ -167,11 +167,9 @@ function changeReportType(){
 }
 
 function loadKpis() {
-
     const type = document
         .querySelector('input[name="reportType"]:checked')
         .value;
-
     let data;
 
     if (type === "email") {
