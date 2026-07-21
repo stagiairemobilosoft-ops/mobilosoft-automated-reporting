@@ -71,3 +71,27 @@ function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+// afficher le modal de succès
+function validateKpis() {
+    console.log("Données enregistrées !");
+    const container = document.getElementById("toast-container");
+
+    const toast = document.createElement("div");
+    toast.className = "toast-success";
+    toast.innerHTML = `
+        <i class="fa-solid fa-check" style="font-size: 20px;"></i>
+        <div class="toast-text">
+            <h5>Success</h5>
+            <p>Enregistrer avec succès</p>
+        </div>
+    `;
+
+    container.appendChild(toast);
+    setTimeout(() => {
+        toast.classList.add("hide");
+        setTimeout(() => {
+            toast.remove();
+        }, 400);
+    }, 3000);
+}
+
