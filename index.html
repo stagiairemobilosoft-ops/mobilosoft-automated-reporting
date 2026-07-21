@@ -1,122 +1,516 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="siege.css">
-    <link rel="stylesheet" href="etab.css">
-    <script src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>My mobilosoft Settings</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/hq.css">
+        <link rel="stylesheet" href="css/franchise.css">
+        <script src="js/script.js"></script>
+        <script src="js/reporting.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <title>My mobilosoft Settings</title>
+    </head>
+    <!-- Modal KPIs franchisés Hidden-->
+    <div id="kpiModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Configuration KPI</h3>
+                <span onclick="closeKpiModal()" class="close"> &times; </span>
+            </div>
+            <!-- Select email & pdf -->
+            <div class="modal-body">
+                <div class="report-type">
+                    <!-- Email -->
+                    <label>
+                        <input type="radio" 
+                        name="reportType" 
+                        value="email"
+                        checked
+                        onchange="changeReportType()">
+                        Email
+                    </label>
+                    <!-- PDF -->
+                    <label>
+                        <input type="radio" 
+                        name="reportType" 
+                        value="pdf"
+                        onchange="changeReportType()">
+                        PDF
+                    </label>
+                </div>
+                <!-- box KPIs -->
+                <h4 id="categoryTitle"></h4>
+                <div id="kpiContainer"></div>
+            </div>
 
-<!-- Nav Bar  -->
-    <nav class="navbar">
-        <div class="flux">
-            Site &gt; <strong>mobilosoft-prod</strong> &gt; Paramètres
+            <div class="modal-footer">
+                <button onclick="saveKpiConfig()">
+                    Enregistrer
+                </button>
+            </div>
         </div>
-
-        <div class="user">
-            <span>Stagiaire mobilosoft</span>
-        </div>
-    </nav>
-
-<!-- Side Bar -->
-
-    <div class="sidebar">
-
-        <div class="sidebar-logo">
-            <img src="img/logo-new.svg" alt="Logo" class="logo">
-        </div>
-
-        <ul class="sidebar-menu">
-
-            <li> <a href="#"><img src="img/icones/png/Visibilité_locale.png" alt="visibilite locale" class="ic_menu"></a></li>
-            <li> <a href="#"><img src="img/icones/png/Publicités_locales.png" alt="visibilite locale" class="ic_menu"> </a></li>
-            <li> <a href="#"><img src="img/icones/png/E-reputation.png" alt="visibilite locale" class="ic_menu"> </a></li>
-            <li> <a href="#"><img src="img/icones/png/Reporting.png" alt="visibilite locale" class="ic_menu"> </a></li>
-            <li> <a href="#"><img src="img/icones/png/IA.png" alt="visibilite locale" class="ic_menu"> </a></li>
-            <li> <a href="#" class="active"><img src="img/icones/png/Réglages.png" alt="visibilite locale" class="ic_menu"> </a></li>
-            <li> <a href="#"><img src="img/icones/png/Compte.png" alt="visibilite locale" class="ic_menu"> </a></li>
-
-        </ul>
-
     </div>
-
-<!-- Corps  -->
-    <div class="body-content">
-
-        <!-- Paramètres -->
-        <div class="menu-title">
-            <h2>Paramètres</h2>
-        </div>  
-
-        <!-- Grid Paramètres -->
-        <div class="content">
-            <div class="cont-params">
-                <p>Configuration rapport</p> 
+    <!-- BODY -->
+    <body>
+        <!-- Nav Bar  -->
+        <nav class="navbar">
+            <div class="flux">
+                Site &gt; <strong>mobilosoft-prod</strong> &gt; Paramètres
             </div>
+
+            <div class="user">
+                <span>Stagiaire mobilosoft</span>
+            </div>
+        </nav>
+        <!-- Side Bar -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="img/logo-new.svg" alt="Logo" class="logo">
+            </div>
+
+            <ul class="sidebar-menu">
+                <li> <a href="#"><img src="img/icones/PNG/Visibilité_locale.png" alt="visibilite locale" class="ic_menu"></a></li>
+                <li> <a href="#"><img src="img/icones/png/Publicités_locales.png" alt="visibilite locale" class="ic_menu"> </a></li>
+                <li> <a href="#"><img src="img/icones/png/E-reputation.png" alt="visibilite locale" class="ic_menu"> </a></li>
+                <li> <a href="#"><img src="img/icones/png/Reporting.png" alt="visibilite locale" class="ic_menu"> </a></li>
+                <li> <a href="#"><img src="img/icones/png/IA.png" alt="visibilite locale" class="ic_menu"> </a></li>
+                <li> <a href="#" class="active"><img src="img/icones/png/Réglages.png" alt="visibilite locale" class="ic_menu"> </a></li>
+                <li> <a href="#"><img src="img/icones/png/Compte.png" alt="visibilite locale" class="ic_menu"> </a></li>
+            </ul>
         </div>
 
-        <!-- Menu Sièges & établissements -->
-        <div class="report-menu">
-
-            <div class="menu-item active" onclick="showTab('siege', this)">
-                Siège
+        <!-- Content -->
+        <div class="body-content">
+            <!-- Paramètres -->
+            <div class="menu-title">
+                <h2>Paramètres</h2>
+            </div> 
+            <!-- Grid Params -->
+            <div class="content">
+                <div class="cont-params">
+                    <p>Configuration rapport</p> 
+                </div>
             </div>
-        
-            <div class="menu-item" onclick="showTab('etablissement', this)">
-                Établissement
-            </div>
-        
-        </div>
-        
-        <!-- Contenu siège  -->
+            <!-- Menu  HQ - FRANCHISES -->
+            <div class="report-menu">
 
+                <div class="menu-item active" onclick="showTab('siege', this)">
+                    Siège
+                </div>
+            
+                <div class="menu-item" onclick="showTab('etablissement', this)">
+                    Établissement
+                </div>
+            </div>
+            <!-- HQ -->
             <div id="siege" class="tab-content">
-
-                
-            
+                <!-- Btn add reporting -->
+                <div class="report-header">
+                    <button class="btn-add-report">
+                        + Nouveau rapport
+                    </button>
+                </div>
+                <!-- content 2 -->
+                <div class="report-container">
+                    <!-- rapport -->
+                    <div class="left-panel">
+                        <h3>Rapport reporting</h3>
+                        <div class="content-left"> 
+                            <div class="rapport-reporting">
+                                <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
+                                <div class="rapport-content">
+                                    <h4>Hebdomadaire - Siège</h4>
+                                    <p class="next-run"> Prochaine exécution : <strong>20/07/26</strong> à <strong>07:00</strong></p>
+                        
+                                    <div class="rapport-info">
+                                        <p>Destinataires : <strong>2</strong></p>
+                                        <p>Dernière exécution : <strong>13/07/26</strong></p>
+                                    </div>
+                                    <span class="status-manuel">
+                                        Manuel
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="rapport-reporting">
+                                <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
+                                <div class="rapport-content">
+                                    <h4>Mensuel - Siège</h4>
+                                    <p class="next-run"> Prochaine exécution : <strong>01/07/26</strong> à <strong>07:00</strong></p>
+                        
+                                    <div class="rapport-info">
+                                        <p>Destinataires : <strong>3</strong></p>
+                                        <p>Dernière exécution : <strong>01/06/26</strong></p>
+                                    </div>
+                                    <span class="status-manuel">
+                                        Manuel
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="rapport-reporting">
+                                <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
+                                <div class="rapport-content">
+                                    <h4>Trimestriel - Siège</h4>
+                                    <p class="next-run"> Prochaine exécution : <strong>01/07/26</strong> à <strong>07:00</strong></p>
+                        
+                                    <div class="rapport-info">
+                                        <p>Destinataires : <strong>1</strong></p>
+                                        <p>Dernière exécution : <strong>01/04/26</strong></p>
+                                    </div>
+                                    <span class="status-auto">
+                                        Automatique
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- configuration -->
+                    <div class="right-panel">
+                        <h3>Configuration du reporting</h3>
+                        <!-- Config de base -->
+                        <h5>Configuration envoie</h5>
+                        <div class="config-card">
+                            <div class="config-header">
+                                Informations générales
+                            </div>
+                            <div class="config-body">
+                                <!-- Titre du rapport -->
+                                <label>Nom du reporting</label>
+                                <input type="text" placeholder="Email Hebdomadaire-Siège" value="Trimestriel- Siège">
+                                <!-- Envoie -->
+                                <label>Mode d'envoie</label>
+                                <div class="mode-choice">
+                                    <label>
+                                        <input type="radio" name="modeEnvoieSiege" value="automatique" checked>
+                                        automatique
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="modeEnvoieSiege" value="manuel" >
+                                        Manuel
+                                    </label>
+                                </div>
+                                <div class="scheduleConfig">
+                                    <!-- Fréquence -->
+                                    <label for="frequence">Fréquence</label>
+                                    <select id="frequence" name="frequence">
+                                        <option value="hebdomadaire">Hebdomadaire</option>
+                                        <option value="mensuelle" selected>Mensuelle</option>
+                                        <option value="trimestrielle">Trimestrielle</option>
+                                    </select>
+                                    <div class="schedule-row">
+                                        <!-- Jour -->
+                                        <div class="field">
+                                            <label for="jour">Jour</label>
+                                            <div class="input-small">
+                                                <select id="jour" name="jour">
+                                                    <option value="lundi" selected>Lundi</option>
+                                                    <option value="mardi">Mardi</option>
+                                                    <option value="mercredi">Mercredi</option>
+                                                    <option value="jeudi">Jeudi</option>
+                                                    <option value="vendredi">Vendredi</option>
+                                                    <option value="samedi">Samedi</option>
+                                                    <option value="dimanche">Dimanche</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- Heure -->
+                                        <div class="field">
+                                            <label for="heure">Heure</label>
+                                            <div class="input-small">
+                                                <input type="time" id="heure" name="heure" value="09:00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Destinataire -->
+                                <label>Destinataire</label>
+                                <div class="email-container">
+                                    <div class="emailTags"></div>
+                                    <input type="email" class="emailInput" placeholder="Email Siège" value="hq@siege.com">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Email -->
+                        <h5>Configuration rapport Email</h5>
+                        <div class="config-card">
+                            <!-- Type de reportings -->
+                            <div id="reportTypesEmail">
+                                <div class="config-header-report" onclick="toggleReporting('Email')">
+                                    <span>Type de reporting</span>
+                                    <i id="reportArrowEmail" class="fa-solid fa-chevron-up"></i>
+                                </div>
+                                <div id="reportListEmail" class="report-list ">
+                                    <div class="report-item" onclick="openReport('visibility','Email')">
+                                        <span>Visibilité</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                    <div class="report-item" onclick="openReport('campaign','Email')">
+                                        <span>Campagnes</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                    <div class="report-item" onclick="openReport('reviews','Email')">
+                                        <span>Avis</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                    <div class="report-item" onclick="openReport('ai','Email')">
+                                        <span>Advanced Insights</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Détails KPIs -->
+                            <div id="reportKpisEmail" class="hidden">
+                                <div class="config-header-report">
+                                    <span onclick="backToReports('Email')" style="cursor:pointer;">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Retour
+                                    </span>
+                                    <button class="validate-btn" onclick="validateKpis()">
+                                        Enregistrer
+                                    </button>
+                                </div>
+                                <!-- box KPIs Email -->
+                                <h4 id="reportTitleEmail"></h4>
+                                <div id="kpiContainerEmail"></div>
+                            </div>
+                        </div>
+                        <!-- Pdf -->
+                        <h5>Configuration rapport PDF</h5>
+                        <div class="config-card">
+                            <!-- Type de reportings -->
+                            <div id="reportTypesPdf">
+                                <div class="config-header-report" onclick="toggleReporting('Pdf')">
+                                    <span>Type de reporting</span>
+                                    <i id="reportArrowPdf" class="fa-solid fa-chevron-up"></i>
+                                </div>
+                                <div id="reportListPdf" class="report-list ">
+                                    <div class="report-item" onclick="openReport('visibility', 'Pdf')">
+                                        <span>Visibilité</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                    <div class="report-item" onclick="openReport('campaign', 'Pdf')">
+                                        <span>Campagnes</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                    <div class="report-item" onclick="openReport('reviews', 'Pdf')">
+                                        <span>Avis</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                    <div class="report-item" onclick="openReport('ai', 'Pdf')">
+                                        <span>Advanced Insights</span>
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Détails KPIs -->
+                            <div id="reportKpisPdf" class="hidden">
+                                <div class="config-header-report">
+                                    <span onclick="backToReports('Pdf')" style="cursor:pointer;">
+                                        <i class="fa-solid fa-arrow-left"></i>
+                                        Retour
+                                    </span>
+                                    <button class="validate-btn" onclick="validateKpis()">
+                                        Enregistrer
+                                    </button>
+                                </div>
+                                <!-- box KPIs Email -->
+                                <h4 id="reportTitlePdf"></h4>
+                                <div id="kpiContainerPdf"></div>
+                            </div>
+                        </div>
+                        <div class="manual-send-container">
+                            <button class="manual-send">
+                                Enregistrer
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            
-        <!-- Contenu établoissement  -->
-
-        <div id="etablissement" class="tab-content hidden">
-            <div class="report-container-etab">
-                <div class="one-panel">
-                    <h3>Établissement </h3>
-                    <hr>
-
-                    <div class="search-box">
-                        <input type="text" placeholder="Rechercher un établissement">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+            <!-- FRANCHISES -->
+            <div id="etablissement" class="tab-content hidden">
+                <div class="etablissement-container">
+                    <!-- 1 grid -->
+                    <div class="one-panel">
+                        <h3>Établissement</h3>
+                        <!-- bar de recherche -->
+                        <div class="content-one">
+                            <div class="search-box">
+                                <input type="text" placeholder="Rechercher un établissement">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <!-- séléction établissement -->
+                            <div class="etablissement-list">
+                                <div class="select-item">
+                                    <input type="checkbox" checked>
+                                    <span>Tout sélectionner</span>
+                                </div>
+                                <div class="select-item">
+                                    <input type="checkbox" checked>
+                                    <span>Delhaize Ottignies</span>
+                                </div>
+                                <div class="select-item">
+                                    <input type="checkbox" checked>
+                                    <span>Delhaize Flagey</span>
+                                </div>
+                                <div class="select-item">
+                                    <input type="checkbox" checked>
+                                    <span>Delhaize Genval</span>
+                                </div>
+                                <div class="select-item">
+                                    <input type="checkbox" checked>
+                                    <span>Delhaize Tournai</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                </div>
-
-                <div class="two-panel">
-                    <h3>Rapports établissement </h3>
-                    <hr>
-                </div>
-
-                <div class="three-panel">
-                    <h3>Configuration du reporting </h3>
-                    <hr>
+                    <div class="two-panel">
+                        <h3>Rapports établissement</h3>
+                        <div class="content-two">
+                            <!-- Btn add reportingt -->
+                            <button class="new-report-btn">
+                                + Nouveau rapport
+                            </button>
+                            <!-- liste de reportingt -->
+                            <div class="report-card">
+                                <div class="report-icon">
+                                    <img src="img/icones/bleu/Document.png" alt="Rapport" class="rapport-icon">
+                                </div>
+                                <div class="report-text">
+                                    <h4>Hebdomadaire - Établissement</h4>
+                                    <p>Chaque lundi à <strong>08:00</strong> </p>
+                                </div>
+                                <span class="status">
+                                    Automatique
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three-panel">
+                        <h3>Configuration du reporting</h3>
+                        <!-- Config de base -->
+                        <h5>Configuration envoie</h5>
+                        <div class="config-card">
+                            <div class="config-header">
+                                Informations générales
+                            </div>
+                            <div class="config-body">
+                                <!-- Titre du rapport -->
+                                <label>Nom du reporting</label>
+                                <input type="text" placeholder="Email Hebdomadaire-Siège" value="Trimestriel- Siège">
+                                <!-- Envoie -->
+                                <label>Mode d'envoie</label>
+                                <div class="mode-choice">
+                                    <label>
+                                        <input type="radio" name="modeEnvoieEtab" value="automatique" checked>
+                                        automatique
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="modeEnvoieEtab" value="manuel" >
+                                        Manuel
+                                    </label>
+                                </div>
+                                <div class="scheduleConfig">
+                                    <!-- Fréquence -->
+                                    <label for="frequence">Fréquence</label>
+                                    <select id="frequence" name="frequence">
+                                        <option value="hebdomadaire">Hebdomadaire</option>
+                                        <option value="mensuelle" selected>Mensuelle</option>
+                                        <option value="trimestrielle">Trimestrielle</option>
+                                    </select>
+                                    <div class="schedule-row">
+                                        <!-- Jour -->
+                                        <div class="field">
+                                            <label for="jour">Jour</label>
+                                            <div class="input-small">
+                                                <select id="jour" name="jour">
+                                                    <option value="lundi" selected>Lundi</option>
+                                                    <option value="mardi">Mardi</option>
+                                                    <option value="mercredi">Mercredi</option>
+                                                    <option value="jeudi">Jeudi</option>
+                                                    <option value="vendredi">Vendredi</option>
+                                                    <option value="samedi">Samedi</option>
+                                                    <option value="dimanche">Dimanche</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- Heure -->
+                                        <div class="field">
+                                            <label for="heure">Heure</label>
+                                            <div class="input-small">
+                                                <input type="time" id="heure" name="heure" value="09:00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Destinataire -->
+                                <label>Destinataire</label>
+                                <div class="email-container">
+                                    <div class="emailTags"></div>
+                                    <input type="email" class="emailInput" placeholder="Email Siège" value="hq@siege.com">
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Configuration rapport Reporting</h5>
+                        <div class="reporting-config-grid">
+                            <!-- visibilité -->
+                            <div class="reporting-card">
+                                <div class="reporting-icon">
+                                    <i class="fa-solid fa-chart-column"></i>
+                                </div>
+                                <h4>Reporting visibilité</h4>
+                                <p>Analyse de la présence en ligne de votre établissement</p>
+                                <button  onclick="openKpiModal('visibility')" >
+                                    Configurer
+                                </button>
+                            </div>
+                            <!-- campagne -->
+                            <div class="reporting-card">
+                                <div class="reporting-icon">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </div>
+                                <h4>Reporting campagne</h4>
+                                <p>Analyse de la performance de vos campagnes locales</p>
+                                <button  onclick="openKpiModal('campaign')" >
+                                    Configurer
+                                </button>
+                            </div>
+                            <!-- avis -->
+                            <div class="reporting-card">
+                                <div class="reporting-icon">
+                                    <i class="fa-solid fa-comment-dots"></i>
+                                </div>
+                                <h4>Reporting avis</h4>
+                                <p>Analyse de la satisfaction et des retours clients</p>
+                                <button  onclick="openKpiModal('reviews')" >
+                                    Configurer
+                                </button>
+                            </div>
+                            <!-- Advanced Insight -->
+                            <div class="reporting-card">                                   
+                                <div class="reporting-icon">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <h4>Advanced Insight</h4>
+                                <p>Analyse IA et recommandations pour votre établissement</p>
+                                <button  onclick="openKpiModal('ai')" >
+                                    Configurer
+                                </button>
+                            </div>
+                        </div>
+                        <div class="manual-send-container">
+                            <button class="manual-send">
+                                Enregistrer
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </body>
 
-    </div>  
-<!-- Corps  -->
-
-<script src="funct.js"></script>
-
-<script src="reporting.js"></script>
-</body>
+    <script src="js/config.js"></script>
 </html>

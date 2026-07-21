@@ -38,11 +38,9 @@ const reportDataPdf = {
     }
 };
 
-
+// ---------------------------------  Fonctions HQ
 function openReport(type, format){
-
     let reportData;
-
     if(format === "Email"){
         reportData = reportDataEmail;
         console.log('OKKKKKKKKKKKKK');
@@ -51,23 +49,17 @@ function openReport(type, format){
         reportData = reportDataPdf;
     }
 
-
     document.getElementById("reportTypes" + format)
         .classList.add("hidden");
 
     document.getElementById("reportKpis" + format)
         .classList.remove("hidden");
 
-
     document.getElementById("reportTitle" + format)
         .innerText = reportData[type].title;
 
-
     const container = document.getElementById("kpiContainer" + format);
-
     container.innerHTML = "";
-
-
     reportData[type].kpis.forEach(kpi => {
 
         container.innerHTML += `
@@ -83,11 +75,81 @@ function openReport(type, format){
 
 
 function backToReports(format){
-
     document.getElementById("reportTypes" + format)
         .classList.remove("hidden");
-
     document.getElementById("reportKpis" + format)
         .classList.add("hidden");
+
+}
+// ---------------------------------  Fonctions FRANCHISES
+let currentCategory = "visibility";
+function openKpiModal(category){
+    currentCategory = category;
+    document
+    .getElementById("kpiModal")
+    .style.display="flex";
+
+    loadKpis();
+
+}
+
+// fermer POPUP
+function closeKpiModal(){
+    document
+    .getElementById("kpiModal")
+    .style.display="none";
+}
+
+
+// changement Email / PDF
+function changeReportType(){
+    loadKpis();
+
+}
+
+function loadKpis(){
+    let type = document
+    .querySelector('input[name="reportType"]:checked')
+    .value;
+
+    let data = type==="email"
+        ? reportDataEmail
+        : reportDataPdf;
+
+    let category = data[currentCategory];
+    document
+    .getElementById("categoryTitle")
+    .innerHTML = category.title;
+
+    let container =
+    document.getElementById("kpiContainer");
+    container.innerHTML="";
+    category.kpis.forEach(kpi=>{
+
+
+        container.innerHTML += `
+        <div class="kpi-items">
+            <input type="checkbox" >
+            <span>
+                ${kpi}
+            </span>
+        </div>
+        `;
+    });
+}
+
+function saveKpiConfig(){
+    let selected=[];
+    document
+    .querySelectorAll(".kpi-items input:checked")
+    .forEach(item=>{
+        selected.push(
+            item.nextElementSibling.innerText
+        );
+
+    });
+
+    console.log("KPIs sélectionnés :",selected);
+    closeKpiModal();
 
 }
