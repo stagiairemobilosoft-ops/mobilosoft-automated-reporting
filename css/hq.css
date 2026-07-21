@@ -118,7 +118,8 @@
 }
 
 .status-auto {
-    margin-left:290px;
+    margin-left:auto;
+    align-self: flex-start;  
     background:#DFF7E8;
     color:#47D2A7;
     border-radius:12px;
@@ -127,7 +128,8 @@
 }
 
 .status-manuel {
-    margin-left:300px;
+    margin-left:auto;
+    align-self: flex-start;  
     background:#E6EFFF;
     color:#065CFF;
     border-radius:12px;
