@@ -6,8 +6,10 @@
     box-sizing: border-box;
 }
 body {
+    zoom: 75%;
     font-family: 'Arial', sans-serif;
-    background-color: #F2F2F5;           
+    background-color: #F2F2F5;    
+      
 }
 
 /* NAVBAR */
@@ -41,11 +43,12 @@ body {
     top: 0;
     left: 0;
     width: 50px;
-    height: 100vh;
+    height: 150vh;
     background: linear-gradient(
         180deg,
         #022D7E 0%, 
         #1E539C 20%,
+        #2563EB 30%,
         #2563EB 50%,   
         #48A9F2 100%
     );
