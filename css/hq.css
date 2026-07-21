@@ -57,11 +57,11 @@
 
 /* HQ-left */
 .content-left{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .rapport-reporting {
     display: flex;
-    width: 500px;
+    width: 90%;
     gap: 20px;
     background: #ffffff;
     border:1px solid #E5E5E5;
