@@ -1,0 +1,160 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+// HUB Reporting sur BigQuery
+Table site {
+  site_name string
+  site_adress string 
+}
+
+Table location {
+  location_name string
+  location_adress string
+}
+
+Table google_search_keywords {
+  site_name string
+  location_name string
+  date date
+  earchKeyword string
+  impression_value integer
+}
+
+Ref: google_search_keywords.location_name > location.location_name
+Ref: google_search_keywords.site_name > site.site_name
+
+Table google_daily_metrics_partitioned {
+  site_name string
+  location_name string
+  date date
+  BUSINESS_IMPRESSIONS_DESKTOP_MAPS integer
+  BUSINESS_IMPRESSIONS_DESKTOP_SEARCH integer 
+  BUSINESS_IMPRESSIONS_MOBILE_MAPS integer
+  BUSINESS_IMPRESSIONS_MOBILE_SEARCH integer
+  BUSINESS_CONVERSATIONS integer
+  BUSINESS_DIRECTION_REQUESTS integer
+  CALL_CLICKS integer
+  WEBSITE_CLICKS integer
+  BUSINESS_BOOKINGS integer
+  BUSINESS_FOOD_ORDERS integer
+  BUSINESS_FOOD_MENU_CLICKS integer
+}
+
+Ref: google_daily_metrics_partitioned.location_name > location.location_name
+Ref: google_daily_metrics_partitioned.site_name > site.site_name
+
+table facebook_page_metrics_partitioned {
+    date date
+    entity_id string
+    location_name string
+    site_name string
+    page_posts_served_impressions_organic_unique integer
+    page_actions_post_reactions_wow_total integer
+    page_actions_post_reactions_haha_total integer
+    page_actions_post_reactions_anger_total integer
+    page_actions_post_reactions_sorry_total integer
+    page_actions_post_reactions_love_total integer
+    page_posts_impressions_nonviral_unique integer
+    page_post_engagements integer
+    page_posts_impressions_viral_unique integer
+    page_posts_impressions_viral integer
+    page_actions_post_reactions_like_total integer
+    page_views_total integer
+    page_posts_impressions_organic integer
+    page_posts_impressions_paid integer
+    page_posts_impressions integer
+    page_posts_impressions_paid_unique integer
+    page_posts_impressions_nonviral integer
+    page_posts_impressions_organic_unique integer
+    page_posts_impressions_unique integer
+    page_impressions integer
+    page_daily_follows integer
+    page_follows integer
+    page_daily_unfollows integer
+    mobilosoft_publication_count_daily integer
+    x_publication_count_daily integer
+}
+
+Ref: facebook_page_metrics_partitioned.location_name > location.location_name
+Ref: facebook_page_metrics_partitioned.site_name > site.site_name
+
+table facebook_campaigns_metrics_partitioned {
+  date date
+  entity_id string
+  location_name string
+  site_name string
+  campaign_title string
+  post_reactions_wow integer
+  post_reactions_sorry integer
+  post_reactions_love integer
+  post_reactions_like integer
+  post_reactions_haha integer
+  post_reactions_anger integer
+  post_impressions_viral_unique integer
+  post_impressions_viral integer
+  post_impressions_unique  integer
+  post_impressions_non_social_unique integer
+  post_impressions_non_social integer
+  post_impressions integer
+  post_clicks_unique integer
+  post_clicks integer
+  post_video_views_org integer
+  is_video boolean
+  shares integer
+  comments integer
+  publication_start_time timestamp
+  publication_end_time timestamp
+}
+
+Ref: facebook_campaigns_metrics_partitioned.location_name > location.location_name
+Ref: facebook_campaigns_metrics_partitioned.site_name > site.site_name
+
+table instagram_page_metrics {
+  date date
+  entity_id string
+  location_name string
+  site_name string
+  likes integer
+  views integer
+  follows integer
+  unfollows integer
+  impressions integer
+  mobilosoft_publication_count_daily integer
+  x_publication_count_daily integer
+  followers_count integer
+}
+
+Ref: instagram_page_metrics.location_name > location.location_name
+Ref: instagram_page_metrics.site_name > site.site_name
+
+table instagram_post_metrics {
+  date date
+  entity_id string
+  location_name string
+  site_name string
+  campaign_title string
+  reactions_likes integer
+  impressions integer
+  shares integer
+  comments integer
+  publication_start_time timestamp
+  publication_end_time timestamp
+}
+
+Ref: instagram_post_metrics.location_name > location.location_name
+Ref: instagram_post_metrics.site_name > site.site_name
+
+table  t_review {
+  created_date timestamp
+  modified_date timestamp
+  location_name string
+  site_name string
+  author_name string
+  channel string
+  channel_review_id string
+  content string
+  rating float
+  status string
+}
+
+Ref: t_review.location_name > location.location_name
+Ref: t_review.site_name > site.site_name
