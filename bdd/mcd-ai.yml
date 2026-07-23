@@ -1,0 +1,93 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+// HUB Advanced insights sur PostgreSQL : Schema troople
+
+Table tro_review_analysis{
+  location_id varchar
+  review_id varchar
+  sentiments JSONB
+  cloud JSONB
+  aspects JSONB
+}
+
+Ref: tro_review_analysis.location_id > location.location_name
+
+
+Table tro_place_follows {
+  location_id string
+  place_id string
+}
+
+Ref: tro_place_follows.location_id > location.location_name
+
+Table tro_place_google_detailed {
+  place_id varchar
+  display_name varchar
+  business_status varchar
+  primary_type varchar
+  types JSONB
+  coordinates JSONB
+  formatted_address varchar
+  rating float
+  user_rating_count integer
+  price_level varchar
+  website_uri varchar
+  google_maps_uri varchar
+  national_phone_num varchar
+  international_phone varchar
+  current_opening_hour JSONB
+  regular_opening_hour JSONB
+  special_days JSONB
+  payment_options JSONB
+  parking_options JSONB
+  accessibility_options JSONB
+  photos JSONB
+}
+
+Table tro_place_facebook_posts {
+  place_id varchar
+  posts_content JSONB
+  posts_count integer
+  posts_photos_count integer
+  posts_videos_count integer
+}
+
+Table tro_place_facebook_ads {
+  place_id varchar
+  ad_id varchar
+  eu_total_reach integer
+  publisher_platforms JSONB
+  target_ages JSONB
+  target_gender JSONB
+  target_locations JSONB
+  start_date timestamp
+  end_date timestamp
+}
+
+Table tro_place_facebook {
+  place_id varchar
+  rating float
+  user_rating_count integer
+  fans integer
+  followers integer
+}
+
+Table tro_location_google_keywords {
+  location_id varchar
+  keywords JSONB
+}
+
+Ref: tro_location_google_keywords.location_id > location.location_name
+
+Table tro_place {
+  google_id varchar
+  facebook_id varchar
+  location_id varchar
+  facebook_user  varchar
+}
+
+Table tro_place_custom_tags {
+  site_id varchar
+  place_id varchar
+  tag varchar
+}
