@@ -123,7 +123,7 @@ function openReport(type, format){
 
         container.innerHTML += `
             <label class="kpi-item">
-                <input type="checkbox">
+                <input type="checkbox" checked>
                 ${kpi}
             </label>
         `;
@@ -188,7 +188,7 @@ function loadKpis() {
     category.kpis.forEach(kpi => {
         container.innerHTML += `
             <div class="kpi-items">
-                <input type="checkbox">
+                <input type="checkbox" checked>
                 <span>${kpi}</span>
             </div>
         `;
