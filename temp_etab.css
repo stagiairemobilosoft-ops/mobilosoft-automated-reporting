@@ -140,6 +140,18 @@ h1{
     color: #a0aec0;
 }
 
+.kpi-desc {
+    margin: 2px 0 0;
+    font-size: 11px;
+    color: #868c95;
+}
+
+.kpi-comment {
+    margin: 2px 0 0;
+    font-size: 11px;
+    color: #000000;
+}
+
 .ai-table {
     width: 100%;
     border: 0;
