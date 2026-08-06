@@ -22,7 +22,7 @@ CREATE TABLE t_site_location (
     UNIQUE (site_id, location_id)
 );
 
--- CONFIG rapport
+-- CONFIG RAPPORT
  -- type : HQ - établissement
 CREATE TABLE t_rp_type (
     id SERIAL PRIMARY KEY,
@@ -74,3 +74,32 @@ CREATE TABLE t_rp_target (
     id_location INTEGER REFERENCES t_location(id)
 );
 
+-- CONFIG KPIS
+-- catégorie : visibilité, campagne, avis, ai
+CREATE TABLE t_kpi_category (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- unit : score, pourcentage, valeur
+CREATE TABLE t_kpi_unit (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- calculation : API, SQL, formule
+CREATE TABLE t_kpi_calculation (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE t_kpi (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(100) NOT NULL UNIQUE,
+    name VARCHAR(255) NOT NULL,
+    id_category INTEGER NOT NULL REFERENCES t_kpi_category(id),
+    id_unit INTEGER NOT NULL REFERENCES t_kpi_unit(id),
+    id_calculation INTEGER NOT NULL REFERENCES t_kpi_calculation(id),
+    display_order INTEGER,
+    active BOOLEAN DEFAULT TRUE
+);
