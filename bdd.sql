@@ -107,13 +107,19 @@ CREATE TABLE t_kpi (
     active BOOLEAN DEFAULT TRUE
 );
 
--- template de kpi
-CREATE TABLE t_kpi_temp (
+-- catalogue de kpi
+CREATE TABLE t_kpi_catalogue (
     id SERIAL PRIMARY KEY,
     id_kpi INTEGER NOT NULL REFERENCES t_kpi(id),
     id_rp_type INTEGER NOT NULL REFERENCES t_rp_type(id),
-    id_rp_frequency INTEGER REFERENCES t_rp_frequency(id),
     source_definition TEXT NOT NULL
+);
+
+-- template de kpi
+CREATE TABLE t_kpi_temp (
+    id SERIAL PRIMARY KEY,
+    id_kpi_cat INTEGER NOT NULL REFERENCES t_kpi_catalogue(id),
+    id_rp_frequency INTEGER REFERENCES t_rp_frequency(id),
 );
 
 -- liaison à rapport de reporting
