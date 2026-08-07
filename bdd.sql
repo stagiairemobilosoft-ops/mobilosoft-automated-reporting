@@ -57,7 +57,7 @@ CREATE TABLE t_rp_schedule (
 -- classé par clients
 CREATE TABLE t_rp_target (
     id SERIAL PRIMARY KEY,
-    id_rp_schedule INTEGER NOT NULL REFERENCES t_rp_config(id),
+    id_rp_schedule INTEGER NOT NULL REFERENCES t_rp_schedule(id),
     id_site INTEGER REFERENCES t_site(id),
     id_location INTEGER REFERENCES t_location(id)
 );
