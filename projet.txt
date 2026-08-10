@@ -1,13 +1,85 @@
 C:\Users\ravmi\IdeaProjects
 GET http://localhost:8080/api/sites/site
-GET http://localhost:8080/api/locations/1
+GET http://localhost:8080/api/locations/(id_location)
 GET http://localhost:8080/api/rp-types
 GET http://localhost:8080/api/rp-frequencies
 
 POST http://localhost:8080/api/rp-configs
 {
-    "name": "Reporting visibilité",
+  "rpConfig": {
+    "name": "Reporting campagne - Site Delhaize",
     "idRpType": 1,
     "formatEmail": true,
     "formatPdf": false
+  },
+
+  "rpSchedule": {
+    "sendMode": "AUTO",
+    "idFrequency": 1,
+    "day": "MONDAY",
+    "hour": "08:00:00",
+    "nextExecution": "2026-08-17",
+    "lastExecution": null,
+    "reportStart": null,
+    "reportEnd": null
+  },
+
+  "rpTargets": [
+    {
+      "idSite": 1,
+      "idLocation": null,
+      "recipients": [
+        "hq@mail.com",
+        "sg@mail.com"
+      ]
+    }
+  ]
 }
+
+
+{
+  "rpConfig": {
+    "name": "Reporting campagne",
+    "idRpType": 2,
+    "formatEmail": true,
+    "formatPdf": false
+  },
+
+  "rpSchedule": {
+    "sendMode": "AUTO",
+    "idFrequency": 1,
+    "day": "MONDAY",
+    "hour": "08:00:00",
+    "nextExecution": "2026-08-17",
+    "lastExecution": null,
+    "reportStart": null,
+    "reportEnd": null
+  },
+
+  "rpTargets": [
+    {
+      "idSite": null,
+      "idLocation": 1,
+      "recipients": [
+        "em1@mail.com",
+        "sg@mail.com"
+      ]
+    },
+    {
+      "idSite": null,
+      "idLocation": 2,
+      "recipients": [
+        "em2@mail.com",
+        "sg@mail.com"
+      ]
+    }
+  ]
+}
+
+
+PUT http://localhost:8080/api/rp-configs/activate/(id_config)
+PUT http://localhost:8080/api/rp-configs/suppression/(id_config)
+
+GET http://localhost:8080/api/rp-configs/2/details
+GET http://localhost:8080/api/rp-configs/2/recipients
+

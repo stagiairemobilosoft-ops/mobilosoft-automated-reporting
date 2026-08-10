@@ -66,7 +66,7 @@ CREATE TABLE t_rp_target (
 -- destinataire
 CREATE TABLE t_rp_recipient (
     id SERIAL PRIMARY KEY,
-    id_rp_target INTEGER NOT NULL REFERENCES t_rp_config(id),
+    id_rp_target INTEGER NOT NULL REFERENCES t_rp_target(id),
     email VARCHAR(255) NOT NULL
 );
 
