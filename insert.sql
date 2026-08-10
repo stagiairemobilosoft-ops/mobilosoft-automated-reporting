@@ -1,4 +1,4 @@
-INSERT INTO t_site (name, language) VALUES  ('Delhaize Belgique', 'fr');
+INSERT INTO t_site (name, language) VALUES  ('Delhaize Be', 'fr');
 
 INSERT INTO t_location  (id_site, name, description, status, language) VALUES
 (1, 'Delhaize Bruxelles Centre', 'Magasin Delhaize Bruxelles Centre', 'ACTIVE', 'fr'),
@@ -44,7 +44,7 @@ INSERT INTO t_location  (id_site, name, description, status, language) VALUES
 (1, 'Delhaize Verviers', 'Magasin Delhaize Verviers', 'ACTIVE', 'fr'),
 (1, 'Delhaize Seraing', 'Magasin Delhaize Seraing', 'ACTIVE', 'fr'),
 (1, 'Delhaize Rixensart', 'Magasin Delhaize Rixensart', 'ACTIVE', 'fr'),
-(1, 'Delhaize Braine-l’Alleud', 'Magasin Delhaize Braine-l’Alleud', 'ACTIVE', 'fr'),
+(1, 'Delhaize Braine-l Alleud', 'Magasin Delhaize Braine-l Alleud', 'ACTIVE', 'fr'),
 (1, 'Delhaize Zaventem', 'Magasin Delhaize Zaventem', 'ACTIVE', 'nl'),
 (1, 'Delhaize Waterloo Nord', 'Magasin Delhaize Waterloo Nord', 'ACTIVE', 'fr'),
 (1, 'Delhaize Dilbeek', 'Magasin Delhaize Dilbeek', 'ACTIVE', 'nl'),

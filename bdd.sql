@@ -1,4 +1,5 @@
-CREATE DATABASE conguration_master;
+CREATE DATABASE reporting_bdd;
+ \c reporting_bdd
 
 -- HUB Location
 CREATE TABLE t_site (
@@ -103,7 +104,7 @@ CREATE TABLE t_kpi (
     id_unit INTEGER NOT NULL REFERENCES t_kpi_unit(id),
     id_calculation INTEGER NOT NULL REFERENCES t_kpi_calculation(id),
     id_type INTEGER NOT NULL REFERENCES t_kpi_type(id), 
-    order INTEGER,
+    d_order INTEGER,
     active BOOLEAN DEFAULT TRUE
 );
 
@@ -119,7 +120,7 @@ CREATE TABLE t_kpi_catalogue (
 CREATE TABLE t_kpi_temp (
     id SERIAL PRIMARY KEY,
     id_kpi_cat INTEGER NOT NULL REFERENCES t_kpi_catalogue(id),
-    id_rp_frequency INTEGER REFERENCES t_rp_frequency(id),
+    id_rp_frequency INTEGER REFERENCES t_rp_frequency(id)
 );
 
 -- liaison à rapport de reporting

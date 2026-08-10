@@ -1,0 +1,13 @@
+C:\Users\ravmi\IdeaProjects
+GET http://localhost:8080/api/sites/site
+GET http://localhost:8080/api/locations/1
+GET http://localhost:8080/api/rp-types
+GET http://localhost:8080/api/rp-frequencies
+
+POST http://localhost:8080/api/rp-configs
+{
+    "name": "Reporting visibilité",
+    "idRpType": 1,
+    "formatEmail": true,
+    "formatPdf": false
+}
