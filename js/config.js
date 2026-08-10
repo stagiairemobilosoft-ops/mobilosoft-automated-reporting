@@ -1,17 +1,76 @@
-// INNPUT AUTO - MANUEL
+// CUSTOM  Date
+const dateRange = flatpickr("#dateRange", {
+    mode: "range",
+    dateFormat: "Y-m-d",
+    locale: "fr",
+    allowInput: false,
+
+    onChange: function(selectedDates) {
+
+        if (selectedDates.length === 2) {
+
+            const reportStart = flatpickr.formatDate(
+                selectedDates[0],
+                "Y-m-d"
+            );
+
+            const reportEnd = flatpickr.formatDate(
+                selectedDates[1],
+                "Y-m-d"
+            );
+
+            console.log("Début :", reportStart);
+            console.log("Fin :", reportEnd);
+        }
+    }
+});
+
+// // INPUT AUTO - MANUEL
+// document.querySelectorAll(".config-card").forEach(card => {
+
+//     const radios = card.querySelectorAll('input[type="radio"]');
+//     const schedule = card.querySelector(".scheduleConfig");
+
+//     radios.forEach(radio => {
+
+//         radio.addEventListener("change", function () {
+
+//             if (this.value === "automatique") {
+//                 schedule.classList.remove("hidden");
+//             } else {
+//                 schedule.classList.add("hidden");
+//             }
+
+//         });
+
+//     });
+
+// });
+
+// INPUT AUTO - MANUEL
 document.querySelectorAll(".config-card").forEach(card => {
 
     const radios = card.querySelectorAll('input[type="radio"]');
     const schedule = card.querySelector(".scheduleConfig");
+    const manualConfig = card.querySelector(".manualConfig");
+    const sendButton = card.querySelector(".manual-send-btn");
 
     radios.forEach(radio => {
 
         radio.addEventListener("change", function () {
 
             if (this.value === "automatique") {
+
                 schedule.classList.remove("hidden");
-            } else {
+                manualConfig.classList.add("hidden");
+                sendButton.classList.add("hidden");
+
+            } else if (this.value === "manuel") {
+
                 schedule.classList.add("hidden");
+                manualConfig.classList.remove("hidden");
+                sendButton.classList.remove("hidden");
+
             }
 
         });
