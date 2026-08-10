@@ -272,7 +272,8 @@ select {
     align-items: center;
     gap: 8px;
     background: #bebec1;
-    padding: 6px 10px;
+    margin-top: 10px;
+    padding: 6px 15px;
     border-radius: 15px;
     font-size: 12px;
     font-family: 'Arial';
@@ -332,7 +333,8 @@ select {
     align-items: center;
     gap: 5px;
     padding: 12px 18px;
-    color: #64748B;
+    /*color: #64748B */
+    color: #000000;
     cursor: pointer;
     font-size: 12px;
     border-bottom: 1px solid #f0f0f0;
