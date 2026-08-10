@@ -228,11 +228,32 @@
                                         </div>
                                     </div>
                                 </div>
+                                 <!-- Période du reportings -->
+                                <div class="manualConfig hidden">
+                                    <label for="dateRange">Période du reporting</label>
+                                    <input
+                                        type="text"
+                                        id="dateRange"
+                                        name="dateRange"
+                                        placeholder="Sélectionner une période"
+                                        readonly
+                                    >
+                                </div>
                                 <!-- Destinataire -->
                                 <label>Destinataire</label>
                                 <div class="email-container">
                                     <div class="emailTags"></div>
                                     <input type="email" class="emailInput" placeholder="Email Siège" value="hq@siege.com">
+                                </div>
+                                <!-- Enregistrer & envoyer -->
+                               <div class="manual-send-container">
+                                    <button class="manual-send" onclick="validateKpis()">
+                                        Enregistrer
+                                    </button>
+
+                                    <button class="manual-send-btn hidden" onclick="sendReporting()">
+                                        Envoyer
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -323,11 +344,6 @@
                                 <h4 id="reportTitlePdf"></h4>
                                 <div id="kpiContainerPdf"></div>
                             </div>
-                        </div>
-                        <div class="manual-send-container">
-                            <button class="manual-send" onclick="validateKpis()">
-                                Enregistrer
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -449,11 +465,32 @@
                                         </div>
                                     </div>
                                 </div>
+                                 <!-- Période du reportings -->
+                                <div class="manualConfig hidden">
+                                    <label for="dateRange">Période du reporting</label>
+                                    <input
+                                        type="text"
+                                        id="dateRange"
+                                        name="dateRange"
+                                        placeholder="Sélectionner une période"
+                                        readonly
+                                    >
+                                </div>
                                 <!-- Destinataire -->
                                 <label>Destinataire</label>
                                 <div class="email-container">
                                     <div class="emailTags"></div>
                                     <input type="email" class="emailInput" placeholder="Email Siège" value="hq@siege.com">
+                                </div>
+                                <!-- Enregistrer & manuel -->
+                                <div class="manual-send-container">
+                                    <button class="manual-send" onclick="validateKpis()">
+                                        Enregistrer
+                                    </button>
+
+                                    <button class="manual-send-btn hidden" onclick="sendReporting()">
+                                        Envoyer
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -515,6 +552,9 @@
         </div>
         <div id="toast-container"></div>
     </body>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
     <script src="js/config.js"></script>
+    
 </html>
