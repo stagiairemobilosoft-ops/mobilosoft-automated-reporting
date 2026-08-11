@@ -1,9 +1,10 @@
-// CUSTOM  Date
+// CUSTOM Date
 const dateRange = flatpickr("#dateRange", {
     mode: "range",
     dateFormat: "Y-m-d",
     locale: "fr",
     allowInput: false,
+    position: "below",
 
     onChange: function(selectedDates) {
 
@@ -25,27 +26,6 @@ const dateRange = flatpickr("#dateRange", {
     }
 });
 
-// // INPUT AUTO - MANUEL
-// document.querySelectorAll(".config-card").forEach(card => {
-
-//     const radios = card.querySelectorAll('input[type="radio"]');
-//     const schedule = card.querySelector(".scheduleConfig");
-
-//     radios.forEach(radio => {
-
-//         radio.addEventListener("change", function () {
-
-//             if (this.value === "automatique") {
-//                 schedule.classList.remove("hidden");
-//             } else {
-//                 schedule.classList.add("hidden");
-//             }
-
-//         });
-
-//     });
-
-// });
 
 // INPUT AUTO - MANUEL
 document.querySelectorAll(".config-card").forEach(card => {
@@ -71,6 +51,10 @@ document.querySelectorAll(".config-card").forEach(card => {
                 manualConfig.classList.remove("hidden");
                 sendButton.classList.remove("hidden");
 
+                // Repositionner Flatpickr après affichage
+                setTimeout(() => {
+                    dateRange._positionCalendar();
+                }, 0);
             }
 
         });
@@ -78,7 +62,6 @@ document.querySelectorAll(".config-card").forEach(card => {
     });
 
 });
-
 // INPUT EMAIL
 const emailInput = document.getElementById("emailInput");
 const emailTags = document.getElementById("emailTags");
