@@ -1,7 +1,7 @@
 // CUSTOM Date
 const dateRange = flatpickr("#dateRange", {
     mode: "range",
-    dateFormat: "Y-m-d",
+    dateFormat: "d-m-Y",
     locale: "fr",
     allowInput: false,
     position: "below",
