@@ -132,10 +132,6 @@ const reportDataPdf = {
                 description: "Mesure la visibilité globale du réseau sur les recherches locales."
             },
             {
-                name: "Evolution de l’indice de visibilité",
-                description: "Présente l’évolution de la visibilité du réseau sur la période."
-            },
-            {
                 name: "Nombre d'activations google (itinéraires, appels, site web)",
                 description: "Indique le nombre d’actions réalisées depuis les fiches Google : itinéraires, appels et visites du site web."
             },
@@ -174,20 +170,8 @@ const reportDataPdf = {
                 description: "Indique le nombre de campagnes arrivées à leur terme."
             },
             {
-                name: "Portée totale des campagnes",
-                description: "Mesure le nombre total de personnes exposées aux campagnes."
-            },
-            {
-                name: "Évolution de la Portée totale des campagnes",
-                description: "Présente l’évolution de la portée des campagnes sur la période."
-            },
-            {
                 name: "Nombre total d'interactions",
                 description: "Indique le nombre total d’interactions générées par les campagnes."
-            },
-            {
-                name: "Évolution des intéractions",
-                description: "Présente l’évolution du nombre d’interactions générées par les campagnes."
             },
             {
                 name: "Meilleure campagne sur la période",
@@ -212,24 +196,12 @@ const reportDataPdf = {
                 description: "Indique le nombre total d’avis reçus par les établissements du réseau."
             },
             {
-                name: "Évolution du volume d'avis",
-                description: "Présente l’évolution du nombre d’avis reçus sur la période."
-            },
-            {
                 name: "Note moyenne",
                 description: "Indique la note moyenne attribuée aux établissements par les clients."
             },
             {
-                name: "Évolution de la note moyenne",
-                description: "Présente l’évolution de la note moyenne sur la période."
-            },
-            {
                 name: "NPS",
                 description: "Mesure le niveau de recommandation des établissements par les clients."
-            },
-            {
-                name: "Évolution du NPS",
-                description: "Présente l’évolution du NPS sur la période."
             },
             {
                 name: "TOP 3 des établissements à meilleure note du réseau",
@@ -266,10 +238,6 @@ const reportDataPdf = {
                 description: "Indique la proportion de sentiments négatifs détectés dans les avis."
             },
             {
-                name: "Évolution des sentiments",
-                description: "Présente l’évolution de la répartition des sentiments sur la période."
-            },
-            {
                 name: "Sentiments par source",
                 description: "Compare les sentiments exprimés selon les différentes sources d’avis."
             },
@@ -284,10 +252,6 @@ const reportDataPdf = {
             {
                 name: "Nombre total de ressentis",
                 description: "Indique le nombre total de ressentis détectés dans les avis analysés."
-            },
-            {
-                name: "Évolution des ressentis",
-                description: "Présente l’évolution du nombre de ressentis détectés sur la période."
             }
         ]
     }
